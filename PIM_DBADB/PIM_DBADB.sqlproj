@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>PIM_DBADB</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{8e41fae9-cd3a-4b85-ace7-a67651345d98}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql110DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>PIM_DBADB</RootNamespace>
+    <AssemblyName>PIM_DBADB</AssemblyName>
+    <ModelCollation>1033, CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <SuppressTSqlWarnings>71502</SuppressTSqlWarnings>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="StoredProcedures" />
+    <Folder Include="UDF" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="StoredProcedures\dbo.spPIMDeleteProduct.StoredProcedure.sql" />
+    <Build Include="UDF\dbo.Split.UserDefinedFunction.sql" />
+    <Build Include="UDF\dbo.udf_FindStringBetweenTwoStrings.UserDefinedFunction.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="StoredProcedures\dbo.spPIMDeleteProductNew.StoredProcedure.sql" />
+    <Build Include="StoredProcedures\dbo.spPIMIntegrityCheck.StoredProcedure.sql" />
+    <Build Include="StoredProcedures\dbo.spProductOrgStatusReport.StoredProcedure.sql" />
+    <Build Include="StoredProcedures\dbo.spProductSearch.StoredProcedure.sql" />
+    <Build Include="StoredProcedures\dbo.spProductSummaryStatusInitialUpdate.StoredProcedure.sql" />
+    <Build Include="StoredProcedures\dbo.Test_usp_PLMControl_populate.StoredProcedure.sql" />
+    <Build Include="StoredProcedures\dbo.usp_ATGCompSKUColorMapper_Populate.StoredProcedure.sql" />
+    <Build Include="StoredProcedures\dbo.usp_BatchExtracts_Update.StoredProcedure.sql" />
+    <Build Include="StoredProcedures\dbo.usp_BatchStatusReport.StoredProcedure.sql" />
+    <Build Include="StoredProcedures\dbo.usp_ConversionExchangeRate_Populate.StoredProcedure.sql" />
+    <Build Include="StoredProcedures\dbo.usp_GetBatchParam.StoredProcedure.sql" />
+    <Build Include="StoredProcedures\dbo.usp_GetBatchParam_Test.StoredProcedure.sql" />
+    <Build Include="StoredProcedures\dbo.usp_GetBatchStatusByBatchID.StoredProcedure.sql" />
+    <Build Include="StoredProcedures\dbo.usp_GetMassPriceListParam.StoredProcedure.sql" />
+    <Build Include="StoredProcedures\dbo.usp_GetMCPSKUFulfillerLocationSLAData.StoredProcedure.sql" />
+    <Build Include="StoredProcedures\dbo.usp_GetOracleSKUByExtractStatus.StoredProcedure.sql" />
+    <Build Include="StoredProcedures\dbo.usp_GetProductList_NotAwaiting.StoredProcedure.sql" />
+    <Build Include="StoredProcedures\dbo.usp_GetSupplier_ForProcessing.StoredProcedure.sql" />
+    <Build Include="StoredProcedures\dbo.usp_GetTableIdentity.StoredProcedure.sql" />
+    <Build Include="StoredProcedures\dbo.usp_ImportManager_Update.StoredProcedure.sql" />
+    <Build Include="StoredProcedures\dbo.usp_ImportTransfer_Delete.StoredProcedure.sql" />
+    <Build Include="StoredProcedures\dbo.usp_ImportTransfer_Driver.StoredProcedure.sql" />
+    <Build Include="StoredProcedures\dbo.usp_ImportTransfer_Upsert.StoredProcedure.sql" />
+    <Build Include="StoredProcedures\dbo.usp_MassPriceUpdate_Status_Update.StoredProcedure.sql" />
+    <Build Include="StoredProcedures\dbo.usp_PLM_Sku_Rationalization_populate.StoredProcedure.sql" />
+    <Build Include="StoredProcedures\dbo.usp_PLMControl_populate.StoredProcedure.sql" />
+    <Build Include="StoredProcedures\dbo.usp_Populate_StageOracleSKUComponentByBatchID.StoredProcedure.sql" />
+    <Build Include="StoredProcedures\dbo.usp_PopulateComponentDetails.StoredProcedure.sql" />
+    <Build Include="StoredProcedures\dbo.usp_PopulateStage_OracleBOMSkuOperationsForExportByBatchID.StoredProcedure.sql" />
+    <Build Include="StoredProcedures\dbo.usp_PopulateStage_ReconcilePrecheck_Final.StoredProcedure.sql" />
+    <Build Include="StoredProcedures\dbo.usp_PopulateStageBlanketPO.StoredProcedure.sql" />
+    <Build Include="StoredProcedures\dbo.usp_PopulateStageBPAChargesByBatchID.StoredProcedure.sql" />
+    <Build Include="StoredProcedures\dbo.usp_PopulateStageDesignMetaDataForExportByBatchID.StoredProcedure.sql" />
+    <Build Include="StoredProcedures\dbo.usp_PopulateStageDesignXMLForExportByBatchID.StoredProcedure.sql" />
+    <Build Include="StoredProcedures\dbo.usp_PopulateStageExtraChargesExportByBatchID.StoredProcedure.sql" />
+    <Build Include="StoredProcedures\dbo.usp_PopulateStageHexcodeForExportByBatchID.StoredProcedure.sql" />
+    <Build Include="StoredProcedures\dbo.usp_PopulateStageItemSchematicExportByBatchID.StoredProcedure.sql" />
+    <Build Include="StoredProcedures\dbo.usp_PopulateStageMassPriceListForOracleItem.StoredProcedure.sql" />
+    <Build Include="StoredProcedures\dbo.usp_PopulateStageMasterDataSheetByBatchID.StoredProcedure.sql" />
+    <Build Include="StoredProcedures\dbo.usp_PopulateStageMasterDataSheetByBatchID_Test.StoredProcedure.sql" />
+    <Build Include="StoredProcedures\dbo.usp_PopulateStageOracleBOMForExportByBatchID.StoredProcedure.sql" />
+    <Build Include="StoredProcedures\dbo.usp_PopulateStageOracleSKUForExportByBatchID.StoredProcedure.sql" />
+    <Build Include="StoredProcedures\dbo.usp_PopulateStageOracleSKUForExportByBatchID_Bkp.StoredProcedure.sql" />
+    <Build Include="StoredProcedures\dbo.usp_PopulateStageOracleSKUForExportByBatchID_Test.StoredProcedure.sql" />
+    <Build Include="StoredProcedures\dbo.usp_PopulateStageProducSpecForExportByBatchID.StoredProcedure.sql" />
+    <Build Include="StoredProcedures\dbo.usp_PopulateStageProductInfoForExportByBatchID.StoredProcedure.sql" />
+    <Build Include="StoredProcedures\dbo.usp_PopulateStageProductInfoForExportByBatchID_Test.StoredProcedure.sql" />
+    <Build Include="StoredProcedures\dbo.usp_PopulateStageProductPriceListForExportByBatchID.StoredProcedure.sql" />
+    <Build Include="StoredProcedures\dbo.usp_PopulateStageProductPriceListForExportByBatchID_Test.StoredProcedure.sql" />
+    <Build Include="StoredProcedures\dbo.usp_PopulateStageProductPriceListForMassPriceUpdate.StoredProcedure.sql" />
+    <Build Include="StoredProcedures\dbo.usp_PopulateStageProductPriceListForMassPriceUpdate_Test.StoredProcedure.sql" />
+    <Build Include="StoredProcedures\dbo.usp_PopulateStageProductPriceListForOracleItemByBatchID.StoredProcedure.sql" />
+    <Build Include="StoredProcedures\dbo.usp_PopulateStageProductXMLForExportByBatchID.StoredProcedure.sql" />
+    <Build Include="StoredProcedures\dbo.usp_PopulateStageProductXMLForExportByBatchID_Test.StoredProcedure.sql" />
+    <Build Include="StoredProcedures\dbo.usp_PopulateStageProductXMLForOracleItemByBatchID.StoredProcedure.sql" />
+    <Build Include="StoredProcedures\dbo.usp_PopulateStageReconcilePreCheck_P1.StoredProcedure.sql" />
+    <Build Include="StoredProcedures\dbo.usp_ProductAvailability_PLM_Sku_Rationalization_populate.StoredProcedure.sql" />
+    <Build Include="StoredProcedures\dbo.usp_ProductAvailability_populate.StoredProcedure.sql" />
+    <Build Include="StoredProcedures\dbo.usp_ProductChannels_ABCID_Update.StoredProcedure.sql" />
+    <Build Include="StoredProcedures\dbo.usp_ProductImportLogXML_Purge.StoredProcedure.sql" />
+    <Build Include="StoredProcedures\dbo.usp_Stage_DM_ItemAttributes.StoredProcedure.sql" />
+    <Build Include="StoredProcedures\dbo.usp_Stage_MassPriceList_Delete.StoredProcedure.sql" />
+    <Build Include="StoredProcedures\dbo.usp_Stage_MasterDataSheetTemplate_Populate.StoredProcedure.sql" />
+    <Build Include="StoredProcedures\dbo.usp_Stage_MasterDataSheetTemplate_Populate_Test.StoredProcedure.sql" />
+    <Build Include="StoredProcedures\dbo.usp_Stage_OracleBOMForExport_Delete.StoredProcedure.sql" />
+    <Build Include="StoredProcedures\dbo.usp_Stage_OracleItem_Update.StoredProcedure.sql" />
+    <Build Include="StoredProcedures\dbo.usp_Stage_OracleSKUForExport_Delete.StoredProcedure.sql" />
+    <Build Include="StoredProcedures\dbo.usp_Stage_PLM_Control_P2_update.StoredProcedure.sql" />
+    <Build Include="StoredProcedures\dbo.usp_Stage_PLM_Sku_Rationalization_P2_update.StoredProcedure.sql" />
+    <Build Include="StoredProcedures\dbo.usp_Stage_PLM_Sku_Rationalization_P3_populate.StoredProcedure.sql" />
+    <Build Include="StoredProcedures\dbo.usp_Stage_PLMControl_P2_FirstAvailable_update.StoredProcedure.sql" />
+    <Build Include="StoredProcedures\dbo.usp_Stage_ProductBPACharges_Delete.StoredProcedure.sql" />
+    <Build Include="StoredProcedures\dbo.usp_Stage_ProductPriceList_Delete.StoredProcedure.sql" />
+    <Build Include="StoredProcedures\dbo.usp_StageMassPriceListRemoveExportToOracle.StoredProcedure.sql" />
+    <Build Include="StoredProcedures\dbo.usp_StageProductPriceListRemoveExportToOracle.StoredProcedure.sql" />
+    <Build Include="StoredProcedures\dbo.usp_UpdateImprint.StoredProcedure.sql" />
+  </ItemGroup>
+</Project>
